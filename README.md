@@ -57,11 +57,10 @@ This command will:
 
 ## Versions
 
-There are three script versions included in the project:
+There are 2 script versions included in the project:
 
 1. **Basic Version**: Uses pandas for both parsing and statistics generation
-2. **Duplicate Version**: Identical to the basic version (maintained for reference)
-3. **SQL-Optimized Version**: Uses a SQL query to perform regional statistics calculations directly in the database for better performance
+2. **SQL-Optimized Version**: Uses a SQL query to perform regional statistics calculations directly in the database for better performance
 
 ## Output Example
 
