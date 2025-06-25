@@ -2,7 +2,6 @@ import sys
 import requests
 from lxml import html
 from sqlalchemy import create_engine, text
-import time
 
 URL = "https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)"
 DB_URL = "postgresql://user:password@db:5432/population_db"
@@ -47,16 +46,6 @@ def parse():
 def stats():
    print("Starting stats calculation...")
    engine = create_engine(DB_URL)
-   
-   for _ in range(10):
-       try:
-           engine.execute(text("SELECT 1 FROM population LIMIT 1"))
-           break
-       except:
-           print("Waiting for population table to be created...")
-           time.sleep(1)
-   else:
-       raise Exception("Table 'population' was not created in time.")
    
    sql_query = text("""
    SELECT
